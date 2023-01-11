@@ -77,3 +77,28 @@ class Subscribtion(models.Model):
 
     def __str__(self):
         return self.email
+
+class Project(models.Model):
+    title = models.CharField(max_length=300)
+    description = models.TextField()
+    image = models.ImageField(upload_to='projects')
+    link = models.CharField(max_length=300)
+
+    def __str__(self):
+        return self.title
+
+    class Meta:
+        verbose_name = 'Проект'
+        verbose_name_plural = 'Проекты'
+
+class Blog(models.Model):
+    title = models.CharField(max_length=300)
+    image = models.ImageField(upload_to='blog/')
+    link = models.CharField(max_length=300)
+
+    def __str__(self):
+        return self.title
+
+    class Meta:
+        verbose_name = 'Статья'
+        verbose_name_plural = 'Статьи'

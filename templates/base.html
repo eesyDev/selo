@@ -31,7 +31,9 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
    </head>
    <!-- body -->
-   <body class="main-layout">
+   {% block header  %}
+   {% endblock  %}
+   
       <!-- loader  -->
       <div class="loader_bg">
          <div class="loader"><img src="{% static 'images/loading.gif' %}" alt="#" /></div>
@@ -60,19 +62,19 @@
                         <div class="collapse navbar-collapse" id="navbarsExample04">
                            <ul class="navbar-nav mr-auto">
                               <li class="nav-item active">
-                                 <a class="nav-link" href="index.html">Home</a>
+                                 <a class="nav-link" href="{% url 'home' %}">Home</a>
                               </li>
                               <li class="nav-item">
-                                 <a class="nav-link" href="about.html">About</a>
+                                 <a class="nav-link" href="{% url 'about' %}">About</a>
                               </li>
                               <li class="nav-item">
-                                 <a class="nav-link" href="service.html">Services</a>
+                                 <a class="nav-link" href="{% url 'service' %}">Services</a>
                               </li>
                               <li class="nav-item">
-                                 <a class="nav-link" href="blog.html">Blog</a>
+                                 <a class="nav-link" href="{% url 'blog' %}">Blog</a>
                               </li>
                               <li class="nav-item">
-                                 <a class="nav-link" href="contact.html">Contact Us</a>
+                                 <a class="nav-link" href="{% url 'contact' %}">Contact Us</a>
                               </li>
                               <li class="nav-item d_none">
                                  <a class="nav-link" href="#"><i class="fa fa-search" aria-hidden="true"></i></a>
@@ -89,6 +91,18 @@
 
       {% block content %}
 
+      {% endblock %}
+
+      {% block about_us %}
+      {% endblock %}
+
+      {% block service %}
+      {% endblock %}
+
+      {% block blog %}
+      {% endblock %}
+
+      {% block contact %}
       {% endblock %}
 
       <!-- end header -->

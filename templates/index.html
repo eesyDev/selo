@@ -1,5 +1,11 @@
 {% extends 'base.html' %}
 {% load static %}
+
+{% block header  %}
+<body class="main-layout">
+{% endblock  %}
+
+
 {% block content %}
       <!-- banner -->
       <section class="banner_main">
@@ -158,20 +164,20 @@
             </div>
             <div class="row">
                <div class="col-md-6">
-                  <form id="request" class="main_form" method="POST">
+                  <form id="request" class="main_form" method="POST" action="{% url 'add_call_back' %}">
                      {%csrf_token%}
                      <div class="row">
                         <div class="col-md-12 ">
-                           <input class="contactus" placeholder="Name" type="type" name="Name"> 
+                           <input class="contactus" placeholder="Name" type="type" name="name"> 
                         </div>
                         <div class="col-md-12">
-                           <input class="contactus" placeholder="Email" type="type" name="Email"> 
+                           <input class="contactus" placeholder="Email" type="type" name="email"> 
                         </div>
                         <div class="col-md-12">
-                           <input class="contactus" placeholder="Phone Number" type="type" name="Phone Number">                          
+                           <input class="contactus" placeholder="Phone Number" type="type" name="phone">                          
                         </div>
                         <div class="col-md-12">
-                           <input class="contactus1" placeholder="Message" type="type" Message="Name">
+                           <input class="contactus1" placeholder="Message" type="type" Message="Name" name="message">
                         </div>
                         <div class="col-md-12">
                            <button class="send_btn">Send</button>
